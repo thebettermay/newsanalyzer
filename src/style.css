@@ -1,0 +1,35 @@
+@import url("vendor/normalize.css");
+@import url("styles/root/root.css");
+@import url("fonts-frontend/font.css");
+
+@import url("styles/header/header.css");
+@import url("styles/header/header-link__logo/header-link__logo.css");
+@import url("styles/header/header-link/header-link.css");
+@import url("styles/header/header-container/header-container.css");
+
+@import url("styles/search/search.css");
+@import url("styles/search/title/title.css");
+@import url("styles/search/text/text.css");
+@import url("styles/search/text/text__author/text__author.css");
+@import url("styles/search/title/title__author/title__author.css");
+@import url("./styles/search/text/text__preloading/text__preloading.css");
+@import url("./styles/search/text/text__preloading/_not-found/text__preloading_not-found.css");
+@import url("./styles/search/title/title__preloading/title__preloading.css");
+@import url("styles/search/search-form/search-form.css");
+@import url("styles/search/search-form/search-button/search-button.css");
+@import url("styles/search/search-form/search-field/search-field.css");
+
+@import url("styles/author/author.css");
+@import url("styles/author/author-photo/author-photo.css");
+@import url("styles/author/author-info-container/author-info-container.css");
+
+@import url("styles/footer/footer.css");
+@import url("styles/footer/footer-copyright/footer-copyright.css");
+@import url("styles/footer/link-container/link-containder.css");
+@import url("styles/footer/footer-link/footer-link.css");
+
+@import url("styles/preloading/preloading.css");
+@import url("styles/preloading/preloader/preloader.css");
+
+@import url("styles/not-found/not-found.css");
+@import url("styles/not-found/not-found-pic/not-found-pic.css");

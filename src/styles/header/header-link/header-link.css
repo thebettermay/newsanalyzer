@@ -1,0 +1,15 @@
+.header-link {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  max-height: 24px;
+  background-image: linear-gradient(to right, #fff 100%, transparent 0);
+  background-position: 0 77px;
+  background-repeat: repeat-x;
+  background-size: 68px 3px;
+}
