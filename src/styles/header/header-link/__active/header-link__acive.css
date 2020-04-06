@@ -1,7 +1,0 @@
-.header-link.header-link__active {
-  color: white;
-  background-image: linear-gradient(to right, #fff 100%, transparent 0);
-  background-position: 50% 100%;
-  background-repeat: repeat-x;
-  background-size: 68px 3px;
-}

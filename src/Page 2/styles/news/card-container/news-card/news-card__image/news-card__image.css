@@ -1,8 +1,0 @@
-.news-card__image {
-  background-image: url("../../../../../images/image_08.jpg");
-  background-size: cover;
-  background-position: 50%;
-  min-height: 272px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
