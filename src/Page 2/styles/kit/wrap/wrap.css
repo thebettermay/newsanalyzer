@@ -1,0 +1,6 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 100px;
+  padding: 100px 0;
+}
