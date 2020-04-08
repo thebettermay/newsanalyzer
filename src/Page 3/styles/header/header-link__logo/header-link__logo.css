@@ -1,0 +1,12 @@
+.header-link__logo {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 24px;
+  min-width: 70%;
+  color: rgb(10, 9, 9);
+  text-decoration: none;
+  max-height: 24px;
+  margin-left: 10%;
+}
