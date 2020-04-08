@@ -11,4 +11,6 @@
   padding: 15% 0;
   justify-content: center;
   align-items: center;
+  min-width: 90px;
+  margin-right: 20px;
 }

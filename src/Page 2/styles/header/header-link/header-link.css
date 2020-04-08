@@ -9,7 +9,8 @@
   text-align: center;
   max-height: 24px;
   padding: 15% 0;
-  display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 90px;
+  margin-right: 20px;
 }

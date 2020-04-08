@@ -30,6 +30,7 @@
 @import url("styles/footer/footer-copyright/footer-copyright.css");
 @import url("styles/footer/link-container/link-containder.css");
 @import url("styles/footer/footer-link/footer-link.css");
+@import url("styles/footer/__network-link/footer__network-link.css");
 
 @import url("styles/preloading/preloading.css");
 @import url("styles/preloading/preloader/preloader.css");
