@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Roboto";
-  font-style: bold;
+  font-style: normal;
   font-weight: 900;
   src: url("./roboto-medium.woff"), format("woff");
 }
