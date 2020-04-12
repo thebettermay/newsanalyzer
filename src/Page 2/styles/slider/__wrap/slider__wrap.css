@@ -1,0 +1,22 @@
+.slider__wrap {
+  margin: auto;
+  padding-bottom: 80px;
+  width: 1232px;
+  height: 500px;
+}
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .slider__wrap {
+    width: 688px;
+    height: 422px;
+    padding-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .slider__wrap {
+    width: 288px;
+    height: 568px;
+    padding-bottom: 0;
+  }
+}

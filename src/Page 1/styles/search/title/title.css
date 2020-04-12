@@ -8,3 +8,11 @@
   max-width: 600px;
   margin: 5% 0 0 0;
 }
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .title {
+    font-size: 36px;
+    line-height: 40px;
+    width: 390px;
+  }
+}

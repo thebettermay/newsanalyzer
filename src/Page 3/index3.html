@@ -5,25 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>News Analyzer</title>
-    <link rel="stylesheet" href="style3.css" />
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.analytics.css %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="<%=require('./images/favicon.png'
+    ).default%>"
+    />
+  </head>
   </head>
 
   <body>
     <div class="root">
       <section class="header">
-        <a href="" class="header-link__logo">News Analyzer</a>
+        <a href="" class="header-link__logo link-hover__grey">News Analyzer</a>
         <div class="header-container">
-          <a href="" class="header-link">Главная</a>
-          <a href="" class="header-link header-link__active">О проекте</a>
+          <a href="./index.html" class="header-link link-hover__grey">Главная</a>
+          <a href="./index2.html" class="header-link header-link__active">О проекте</a>
         </div>
       </section>
 
       <section class="info">
         <div class="wrap">
         <div class="link-container link-container_info">
-          <a href="#" class="link link_active">Главная</a>
+          <a href="index.html" class="link link_active link-hover__grey" >Главная</a>
           <p class="slash">/</p>
-          <a href="#" class="link">Аналитика</a>
+          <a href="index3.html" class="link link-hover__grey">Аналитика</a>
         </div>
         <h2 class="title">
           Вы спросили:
@@ -36,7 +46,7 @@
           <p class="text">
             Упоминаний в заголовках: <span class="text_result">22</span>
           </p>
-        </dv>
+        </div>
       </section>
 
       <section class="analytics">
@@ -46,39 +56,62 @@
         <p class="date">Дата</p>
         <p class="month">август</p>
         <p class="mention">кол-во упоминаний</p>
-      </div>
+        </div>
 
+        <div class="analytics__data">
+
+
+          <dl class="dates">
+            <dt class="analytics__date">22,ср</dt>
+            <dt class="analytics__date">22,ср</dt>
+            <dt class="analytics__date">22,ср</dt>
+            <dt class="analytics__date">22,ср</dt>
+            <dt class="analytics__date">22,ср</dt>
+            <dt class="analytics__date">22,ср</dt>
+            <dt class="analytics__date">22,ср</dt>
+          </dl>
 
         <div class="graphs">
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
-          <div class="graph-container">12, ср<div class="graph">1</div></div>
+          <div class="graph__scale"><p>0</p><p>25</p><p>50</p><p>75</p><p>100</p></div>
+          <div class="graph">1</div>
+          <div class="graph">1</div>
+          <div class="graph">1</div>
+          <div class="graph">1</div>
+          <div class="graph">1</div>
+          <div class="graph">1</div>
+          <div class="graph">1</div>
+          <div class="graph__scale graph__scale_low"><p>0</p><p>25</p><p>50</p><p>75</p><p>100</p></div>
         </div>
       </div>
 
-    </div>
+
+
       </section>
 
       <section class="footer">
         <p class="footer-copyright">© 2019 Орехов Евгений</p>
-        <a href="#" class="footer-link">Главная </a>
-        <a href="#" class="footer-link">О проекте</a>
-        <a href="https://praktikum.yandex.ru/" class="footer-link"
+        <a href="./index.html" class="footer-link link-hover__grey" >Главная </a>
+        <a href="./index2.html" class="footer-link link-hover__grey">О проекте</a>
+        <a href="https://praktikum.yandex.ru/" class="footer-link link-hover__grey"
           >Яндекс.Практикум</a
         >
         <div class="link-container">
-          <a href="https://github.com/thebettermay?tab=repositories"
+          <a
+            href="https://github.com/thebettermay?tab=repositories"
+            class="footer__network-link"
             ><img src="./images/github_icon.svg" class="footer-link"
           /></a>
-          <a href="https://www.instagram.com/evgenijorekhov/"
+          <a
+            href="https://www.instagram.com/evgenijorekhov/"
+            class="footer__network-link"
             ><img src="./images/instagram_icon.svg" class="footer-link"
           /></a>
         </div>
       </section>
     </div>
+    <script
+      type="module"
+      src="<%= htmlWebpackPlugin.files.chunks.analytics.entry %>"
+    ></script>
   </body>
 </html>

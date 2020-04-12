@@ -5,24 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>News Analyzer</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="<%=htmlWebpackPlugin.files.chunks.main.css %>"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="<%=require('./images/favicon.png'
+    ).default%>"
+    />
   </head>
 
   <body>
     <div class="root">
       <section class="search">
         <section class="header">
-          <a href="" class="header-link__logo">News Analyzer</a>
           <div class="header-container">
-            <a href="" class="header-link header-link__active">Главная</a>
-            <a href="" class="header-link">О проекте</a>
+          <a href="./index.html" class="header-link__logo link-hover__grey"
+            >NewsAnalyzer</a
+          >
+          <div class="header-link-container">
+            <a href="./index.html" class="header-link header-link__active"
+              >Главная</a
+            >
+            <a href="./index2.html" class="header-link link-hover">О проекте</a>
           </div>
+        </div>
         </section>
+        <div class="search__container">
 
-        <h2 class="title">Что в мире творится?</h2>
+        <h2 class="title title__search">Что в мире творится?</h2>
         <h3 class="text">
           Введите в поиске любую тему и узнайте, насколько популярной она была в
-          носотях за прошедшую неделю.
+          новостях за прошедшую неделю.
         </h3>
         <form class="search-form" name="search">
           <input
@@ -30,11 +46,16 @@
             name="search-field"
             class="search-field"
             placeholder="Введите запрос"
+            pattern="^[a-zA-Zа-яА-ЯЁё0-9]+$"
+            minlength="2"
+            maxlength="20"
+            required
           />
           <button type="submit" name="search-button" class="search-button">
             Искать
           </button>
         </form>
+
       </section>
 
       <section class="preloading">
@@ -43,60 +64,57 @@
       </section>
 
       <section class="not-found">
-        <img src="./images/not-found_v1.svg" class="not-found-pic" />
+        <img
+          src="<%=require('./images/not-found.svg'
+        ).default%>"
+          class="not-found-pic"
+        />
         <h2 class="title title__preloading">Ничего не найдено</h2>
         <h3 class="text__preloading text__preloading_not-found">
           К сожалению по вашему запросу ничего не найдено...
         </h3>
+
       </section>
 
       <section class="news">
+        <div class="news-container">
         <div class="wrap">
           <h2 class="title title__news">Результаты поиска</h2>
-          <a href="#" class="analytics-link">Посмотреть аналитику ></a>
+          <a href="./index3.html" class="analytics-link link-hover__grey"
+            >Посмотреть аналитику ></a
+          >
         </div>
         <div class="card-container">
           <div class="news-card">
             <div class="news-card__image"></div>
             <div class="news-card__info">
               <p class="date">2 2 августа 2019</p>
-              <h2 class="heading">Цвточки</h2>
-              <p class="text-news">
-                Не покупай, посади сам. Процесс увлекательный, тврческий. Тебе
-                понравится.
-              </p>
-              <p class="resource">JOPA.net</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <div class="news-card__info">
-              <p class="date">2 2 августа 2019</p>
-              <h2 class="heading">Цвточки</h2>
-              <p class="text-news">
-                Не покупай, посади сам. Процесс увлекательный, тврческий. Тебе
-                понравится.
-              </p>
-              <p class="resource">JOPA.net</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <div class="news-card__info">
-              <p class="date">2 2 августа 2019</p>
-              <h2 class="heading">Цвточки</h2>
-              <p class="text-news">
-                Не покупай, посади сам. Процесс увлекательный, тврческий. Тебе
-                понравится.
-              </p>
-              <p class="resource">JOPA.net</p>
-            </div>
-          </div>
-          <div class="news-card">
-            <div class="news-card__image"></div>
-            <div class="news-card__info">
-              <p class="date">2 2 августа 2019</p>
               <h2 class="heading">Цветочки</h2>
+              <p class="text-news">
+                Не покупай, посади сам. Процесс увлекательный, тврческий. Тебе
+                понравится.
+              </p>
+              <p class="resource">JOPA.net</p>
+            </div>
+          </div>
+          <div class="news-card">
+            <div class="news-card__image"></div>
+            <div class="news-card__info">
+              <p class="date">2 2 августа 2019</p>
+              <h2 class="heading">Цветочки фыв фыв фыв фыв фыв </h2>
+              <p class="text-news">
+                Не покупай, посади сам. Процесс увлекательный, тврческий. Тебе
+                понравится.
+              </p>
+              <p class="resource">JOPA.net</p>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <div class="news-card__image"></div>
+            <div class="news-card__info">
+              <p class="date">2 2 августа 2019</p>
+              <h2 class="heading">Цвточки</h2>
               <p class="text-news">
                 Не покупай, посади сам. Процесс увлекательный, тврческий. Тебе
                 понравится.
@@ -110,10 +128,16 @@
             Показать ещё
           </button>
         </form>
+      </div>
       </section>
 
       <section class="author">
-        <img src="images/photo.jpg" class="author-photo" />
+        <div class="author__container">
+        <img
+          src="<%=require('./images/photo.jpg'
+        ).default%>"
+          class="author-photo"
+        />
         <div class="author-info-container">
           <h2 class="title title__author">Об авторе</h2>
           <p class="text text__author">
@@ -125,28 +149,51 @@
             научились, и чем можете помочь потенциальным заказчикам.
           </p>
         </div>
+      </div>
       </section>
 
       <section class="footer">
+        <div class="footer-container">
         <p class="footer-copyright">© 2019 Орехов Евгений</p>
-        <a href="#" class="footer-link">Главная </a>
-        <a href="#" class="footer-link">О проекте</a>
-        <a href="https://praktikum.yandex.ru/" class="footer-link"
+        <nav class="footer-nav">
+          <ul class="footer-nav__links">
+        <li class="nav-link"><a href="./index.html" class="footer-link link-hover__grey">Главная </a></li>
+        <li class="nav-link"><a href="./index2.html" class="footer-link link-hover__grey"
+          >О проекте</a
+        ></li>
+
+        <li class="nav-link"><a
+          href="https://praktikum.yandex.ru/"
+          class="footer-link link-hover__grey"
           >Яндекс.Практикум</a
-        >
+
+        ></li>
+      </ul>
+      </nav>
         <div class="link-container">
           <a
             href="https://github.com/thebettermay?tab=repositories"
             class="footer__network-link"
-            ><img src="./images/github_icon.svg" class="footer-link"
+            ><img
+              src="<%=require('./images/github_icon.svg'
+            ).default%>"
+              class="footer-link"
           /></a>
           <a
             href="https://www.instagram.com/evgenijorekhov/"
             class="footer__network-link"
-            ><img src="./images/instagram_icon.svg" class="footer-link"
+            ><img
+              src="<%=require('./images/instagram_icon.svg'
+              ).default%>"
+              class="footer-link"
           /></a>
         </div>
+      </div>
       </section>
-    </div>
+
+    <script
+      type="module"
+      src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"
+    ></script>
   </body>
 </html>

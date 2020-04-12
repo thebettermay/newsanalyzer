@@ -1,0 +1,16 @@
+.news-container {
+  margin: auto;
+  width: 1232px;
+}
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .news-container {
+    width: 688px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .news-container {
+    width: 288px;
+  }
+}

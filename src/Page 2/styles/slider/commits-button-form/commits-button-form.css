@@ -1,0 +1,10 @@
+.commits-button-form {
+  display: none;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .commits-button-form {
+    display: block;
+    margin-top: 48px;
+  }
+}

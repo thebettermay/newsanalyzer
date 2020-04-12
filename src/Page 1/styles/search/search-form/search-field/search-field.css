@@ -13,4 +13,19 @@
   line-height: 22px;
   color: #1a1b22;
   padding-left: 20px;
+  outline: none;
+}
+
+.search-field:focus + .search-button {
+  background: #347eff;
+  transition: linear 0.5s;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .search-field {
+    width: 288px;
+    margin-bottom: 104px;
+    position: inherit;
+    height: 60px;
+  }
 }

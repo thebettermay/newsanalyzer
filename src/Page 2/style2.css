@@ -2,6 +2,16 @@
 @import url("styles/root/root.css");
 @import url("fonts-frontend/font.css");
 
+@import url("styles/slider/flickity__custom.css");
+@import url("styles/slider/slider.css");
+@import url("styles/slider/flickity.css");
+@import url("styles/slider/analytics-link/analytics-link.css");
+@import url("styles/slider/__wrap/slider__wrap.css");
+@import url("styles/slider/slider-heading/slider-heading.css");
+@import url("styles/slider/__title/slider__title.css");
+@import url("styles/slider/commits-button-form/commits-button.css");
+@import url("styles/slider/commits-button-form/commits-button-form.css");
+
 @import url("styles/header/header.css");
 @import url("styles/header/header-link__logo/header-link__logo.css");
 @import url("styles/header/header-link/header-link.css");
@@ -9,8 +19,11 @@
 @import url("styles/header/header-container/header-container.css");
 
 @import url("styles/for-clients/for-clients.css");
+@import url("styles/for-clients/__container/for-clients__container.css");
+@import url("styles/for-clients/__paragraph/for-clients__paragraph.css");
 
 @import url("styles/author/author.css");
+@import url("styles/author/__container/author__container.css");
 @import url("styles/author/author-photo/author-photo.css");
 @import url("styles/author/author-info-container/author-info-container.css");
 
@@ -19,10 +32,20 @@
 @import url("styles/footer/link-container/link-containder.css");
 @import url("styles/footer/footer-link/footer-link.css");
 @import url("styles/footer/__network-link/footer__network-link.css");
+@import url("styles/footer/footer-container/footer-container.css");
+@import url("styles/footer/footer-nav/__links/footer-nav__links.css");
+@import url("styles/footer/footer-nav/__links/nav-link/nav-link.css");
 
 @import url("styles/text/text.css");
 @import url("styles/text/title/title.css");
+@import url("styles/text/text__author/text__author.css");
 @import url("styles/text/-center-align/text_center-align.css");
+
 @import url("styles/kit/kit.css");
 @import url("styles/kit/icon-container/icon-container.css");
-@import url("styles/kit/wrap/wrap.css");
+@import url("styles/kit/__wrap/kit__wrap.css");
+@import url("styles/kit/__title/kit__title.css");
+@import url("styles/kit/icon-wrapper/icon-wrapper.css");
+
+@import url("styles/link-hover/link-hover.css");
+@import url("styles/link-hover/__grey/link-hover__grey.css");

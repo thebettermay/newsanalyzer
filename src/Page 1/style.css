@@ -6,6 +6,7 @@
 @import url("styles/header/header-link__logo/header-link__logo.css");
 @import url("styles/header/header-link/header-link.css");
 @import url("styles/header/header-link/__active/header-link__acive.css");
+@import url("styles/header/header-link-container/header-link-container.css");
 @import url("styles/header/header-container/header-container.css");
 
 @import url("styles/search/search.css");
@@ -21,16 +22,22 @@
 @import url("styles/search/search-form/search-form.css");
 @import url("styles/search/search-form/search-button/search-button.css");
 @import url("styles/search/search-form/search-field/search-field.css");
+@import url("styles/search/search__container/search__container.css");
+@import url("styles/search//title/__search/title__search.css");
 
 @import url("styles/author/author.css");
 @import url("styles/author/author-photo/author-photo.css");
 @import url("styles/author/author-info-container/author-info-container.css");
+@import url("styles/author/__container/author__container.css");
 
 @import url("styles/footer/footer.css");
 @import url("styles/footer/footer-copyright/footer-copyright.css");
 @import url("styles/footer/link-container/link-containder.css");
 @import url("styles/footer/footer-link/footer-link.css");
 @import url("styles/footer/__network-link/footer__network-link.css");
+@import url("styles/footer/footer-container/footer-container.css");
+@import url("styles/footer/footer-nav/__links/footer-nav__links.css");
+@import url("styles/footer/footer-nav/__links/nav-link/nav-link.css");
 
 @import url("styles/preloading/preloading.css");
 @import url("styles/preloading/preloader/preloader.css");
@@ -47,8 +54,11 @@
 @import url("styles/news/card-container/news-card/news-card__info/date.css");
 @import url("styles/news/card-container/news-card/news-card__info/heading.css");
 @import url("styles/news/card-container/news-card/news-card__info/resource.css");
-@import url("styles/news/card-container/news-card/news-card__info/text.css");
-@import url("styles/news/wrap/wrap.css");
 @import url("styles/news/more-form/more-form.css");
 @import url("styles/news/more-form/more-button/more-button.css");
 @import url("styles/news/wrap/analytics-link/analytics-link.css");
+@import url("styles/news/news-container/news-container.css");
+@import url("styles/news/wrap/wrap.css");
+
+@import url("styles/link-hover/link-hover.css");
+@import url("styles/link-hover/__grey/link-hover__grey.css");

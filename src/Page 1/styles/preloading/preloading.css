@@ -1,5 +1,5 @@
 .preloading {
-  display: flex;
+  display: none;
   width: 100%;
   flex-direction: column;
   justify-content: center;

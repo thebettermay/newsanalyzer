@@ -1,7 +1,6 @@
 .header-container {
   display: flex;
-  width: 180px;
   justify-content: space-between;
   align-items: center;
-  margin-right: 10%;
+  margin-right: 100px;
 }

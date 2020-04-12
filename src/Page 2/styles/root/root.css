@@ -1,11 +1,5 @@
 .root {
-  max-width: 1440px;
-  margin: 0 auto;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  font-family: Roboto;
+  font-family: Roboto, Roboto Slab, Arial, Helvetica, sans-serif, serif;
   font-style: normal;
 
   -webkit-font-smoothing: antialiased;
