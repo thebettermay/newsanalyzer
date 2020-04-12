@@ -1,12 +1,12 @@
 .footer-link {
-  font-family: "Source Sans Pro";
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  font-family: Source;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 400;
   font-size: 18px;
   line-height: 24px;
-  text-decoration: none;
-  text-align: center;
   color: #1a1b22;
-  align-self: center;
-  margin-right: 20px;
+  text-decoration: none;
 }

@@ -1,3 +1,5 @@
+/*Все стили разбиты по блокам и идут через строку*/
+
 @import url("vendor/normalize.css");
 @import url("styles/root/root.css");
 @import url("fonts-frontend/font.css");

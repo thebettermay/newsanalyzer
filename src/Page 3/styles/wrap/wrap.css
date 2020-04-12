@@ -1,3 +1,17 @@
 .wrap {
-  margin: 0 100px;
+  margin: auto;
+  width: 1232px;
+}
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .wrap {
+    width: 688px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .wrap {
+    width: 288px;
+    min-height: 56px;
+  }
 }

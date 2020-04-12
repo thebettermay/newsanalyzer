@@ -1,6 +1,8 @@
+/*Все стили разбиты по блокам и идут через строку*/
+
 @import url("vendor/normalize.css");
 @import url("styles/root/root.css");
-@import url("fonts-frontend/font.css");
+@import url("./fonts-frontend/font.css");
 
 @import url("styles/header/header.css");
 @import url("styles/header/header-link__logo/header-link__logo.css");
@@ -12,20 +14,25 @@
 @import url("styles/footer/footer-copyright/footer-copyright.css");
 @import url("styles/footer/link-container/link-containder.css");
 @import url("styles/footer/footer-link/footer-link.css");
-@import url("styles/footer/link-container/_info/link-container_info.css");
 @import url("styles/footer/__network-link/footer__network-link.css");
+@import url("styles/footer/footer-container/footer-container.css");
+@import url("styles/footer/footer-nav/__links/footer-nav__links.css");
+@import url("styles/footer/footer-nav/__links/nav-link/nav-link.css");
 
 @import url("styles/text/text.css");
 @import url("styles/text/title/title.css");
 @import url("styles/text/-center-align/text_center-align.css");
 @import url("styles/text/_result/text_result.css");
-@import url("styles/text/title/_analytics/title_analytics.css");
+@import url("styles/text/title/__analytics/title__analytics.css");
+@import url("styles/text/title/__info/title__info.css");
 
 @import url("styles/info/info.css");
 @import url("styles/info/link/link.css");
 @import url("styles/info/link/_active/link_active.css");
+@import url("styles/info/link/__grey/link__grey.css");
 @import url("styles/info/link/slash/slash.css");
 @import url("styles/info/result-wrap/result-wrap.css");
+@import url("styles/info/__link-container/info__link-container.css");
 
 @import url("styles/analytics/analytics.css");
 @import url("styles/analytics/headings-wrap/headings-wrap.css");

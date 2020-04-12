@@ -21,38 +21,40 @@
   <body>
     <div class="root">
       <section class="header">
-        <a href="" class="header-link__logo link-hover__grey">News Analyzer</a>
         <div class="header-container">
-          <a href="./index.html" class="header-link link-hover__grey">Главная</a>
-          <a href="./index2.html" class="header-link header-link__active">О проекте</a>
+          <a href="" class="header-link__logo link-hover__grey">NewsAnalyzer</a>
+
+          <a href="./index.html" class="header-link">Главная</a>
+          <a href="./index2.html" class="header-link "
+            >О проекте</a
+          >
         </div>
       </section>
 
       <section class="info">
         <div class="wrap">
-        <div class="link-container link-container_info">
-          <a href="index.html" class="link link_active link-hover__grey" >Главная</a>
-          <p class="slash">/</p>
-          <a href="index3.html" class="link link-hover__grey">Аналитика</a>
-        </div>
-        <h2 class="title">
+        <p class="info__link-container">Главная<span class="link__grey"> / Аналитика</span></p>
+
+
+        <h2 class="title title__info">
           Вы спросили:
-          <span class="title">ОПАААААА</span>
+          <span class=" title title__result">ОПАААААА</span>
         </h2>
         <div class="result-wrap">
           <p class="text">
-            Новостей за неделю: <span class="text_result">2212121</span>
+            Новостей за неделю: <span class="text text_result">2212121</span>
           </p>
           <p class="text">
-            Упоминаний в заголовках: <span class="text_result">22</span>
+            Упоминаний в заголовках: <span class=" text text_result">22</span>
           </p>
         </div>
+      </div>
       </section>
 
       <section class="analytics">
         <div class="wrap">
         <div class="headings-wrap">
-        <h2 class="title title_analytics">Аналитика по дням</h2>
+        <h2 class="title title__analytics">Аналитика по дням</h2>
         <p class="date">Дата</p>
         <p class="month">август</p>
         <p class="mention">кол-во упоминаний</p>
@@ -89,25 +91,51 @@
       </section>
 
       <section class="footer">
-        <p class="footer-copyright">© 2019 Орехов Евгений</p>
-        <a href="./index.html" class="footer-link link-hover__grey" >Главная </a>
-        <a href="./index2.html" class="footer-link link-hover__grey">О проекте</a>
-        <a href="https://praktikum.yandex.ru/" class="footer-link link-hover__grey"
-          >Яндекс.Практикум</a
-        >
-        <div class="link-container">
-          <a
-            href="https://github.com/thebettermay?tab=repositories"
-            class="footer__network-link"
-            ><img src="./images/github_icon.svg" class="footer-link"
-          /></a>
-          <a
-            href="https://www.instagram.com/evgenijorekhov/"
-            class="footer__network-link"
-            ><img src="./images/instagram_icon.svg" class="footer-link"
-          /></a>
+        <div class="footer-container">
+          <p class="footer-copyright">© 2019 Орехов Е.</p>
+          <nav class="footer-nav">
+            <ul class="footer-nav__links">
+              <li class="nav-link">
+                <a href="./index.html" class="footer-link link-hover__grey"
+                  >Главная
+                </a>
+              </li>
+              <li class="nav-link">
+                <a href="./index2.html" class="footer-link link-hover__grey"
+                  >О проекте</a
+                >
+              </li>
+
+              <li class="nav-link">
+                <a
+                  href="https://praktikum.yandex.ru/"
+                  class="footer-link link-hover__grey" target="_blank"
+                  >Яндекс.Практикум</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="link-container">
+            <a
+              href="https://github.com/thebettermay?tab=repositories"
+              class="footer__network-link" target="_blank" alt="github_pic"
+              ><img
+                src="<%=require('./images/github_icon.svg'
+            ).default%>"
+                class="footer-link"
+            /></a>
+            <a
+              href="https://www.instagram.com/evgenijorekhov/"
+              class="footer__network-link" target="_blank"
+              ><img
+                src="<%=require('./images/instagram_icon.svg'
+              ).default%>"
+                class="footer-link" alt="instagram_pic"
+            /></a>
+          </div>
         </div>
       </section>
+    </div>
     </div>
     <script
       type="module"

@@ -1,3 +1,5 @@
+/*Все стили разбиты по блокам и идут через строку*/
+
 @import url("vendor/normalize.css");
 @import url("styles/root/root.css");
 @import url("fonts-frontend/font.css");
@@ -38,6 +40,7 @@
 
 @import url("styles/text/text.css");
 @import url("styles/text/title/title.css");
+@import url("styles/text/title/title__author/title__author.css");
 @import url("styles/text/text__author/text__author.css");
 @import url("styles/text/-center-align/text_center-align.css");
 
