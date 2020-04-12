@@ -1,4 +1,4 @@
-/* external css: flickity.css */
+/* ВСЕ НАСТРОЙКИ СЛАЙДЕРА ЗДЕСЬ */
 
 * {
   box-sizing: border-box;
@@ -65,7 +65,7 @@
 }
 
 .cell-photo {
-  background-image: url("../../images/photo.jpg");
+  background-image: url("../../images/avatar1.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -103,6 +103,8 @@
   line-height: 22px;
   color: #1a1b22;
 }
+
+/* Медиа-запросы*/
 
 @media screen and (max-width: 1250px) and (min-width: 768px) {
   .carousel-cell {
