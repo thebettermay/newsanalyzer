@@ -16,11 +16,10 @@
   outline: none;
 }
 
-.search-field:focus + .search-button {
-  background: #347eff;
-  transition: linear 0.5s;
+.search-field:focus {
+  transition: 0.5s linear;
+  background-color: rgb(200, 202, 194);
 }
-
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .search-field {
     width: 288px;
