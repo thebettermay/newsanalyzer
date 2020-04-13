@@ -1,0 +1,22 @@
+.commits-button {
+  height: 56px;
+  background: #f5f6f7;
+  border: 1px solid #1a1b22;
+  outline: none;
+  border-radius: 80px;
+  cursor: pointer;
+  padding: 0;
+  width: 288px;
+  min-height: 56px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+}
+
+.commits-button:hover {
+  transition: 0.5s linear;
+  background-color: rgb(200, 202, 194);
+}

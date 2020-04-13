@@ -1,0 +1,15 @@
+.link-container {
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  padding-top: 10px;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .link-container {
+    width: 74px;
+    position: absolute;
+    top: 20px;
+    right: 18px;
+  }
+}

@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  min-height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  border-bottom: 1px solid #b6bcbf;
+  box-shadow: inset 0px -1px 0px rgba(255, 255, 255, 0.2);
+}

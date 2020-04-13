@@ -1,0 +1,4 @@
+.for-clients {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,16 @@
+.info__link-container {
+  padding-top: 40px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .info__link-container {
+    display: none;
+  }
+}

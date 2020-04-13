@@ -1,0 +1,10 @@
+.graph__scale {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #b6bcbf;
+}

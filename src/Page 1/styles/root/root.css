@@ -1,0 +1,28 @@
+.root {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto, Roboto Slab, Arial, Helvetica, sans-serif, serif;
+  font-style: normal;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .root {
+    max-width: 1250px;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .root {
+    max-width: 768px;
+  }
+}

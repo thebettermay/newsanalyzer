@@ -1,0 +1,17 @@
+.header-link.header-link__active {
+  height: 80px;
+  line-height: 80px;
+  background-image: linear-gradient(90deg, #1a1b22 100%, transparent 0);
+  background-position: 0 77px;
+  background-repeat: repeat-x;
+  background-size: 68px 3px;
+  color: black;
+  width: 86px;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .header-link.header-link__active {
+    width: 76px;
+    font-size: 16px;
+  }
+}

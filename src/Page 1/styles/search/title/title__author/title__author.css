@@ -1,0 +1,23 @@
+.title.title__author {
+  color: black;
+  font-size: 40px;
+  line-height: 46px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .title.title__author {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .title.title__author {
+    margin-bottom: 16px;
+    width: 288px;
+    font-size: 30px;
+    line-height: 40px;
+  }
+}

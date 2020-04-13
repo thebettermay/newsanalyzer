@@ -1,0 +1,8 @@
+.link-hover__grey {
+  transition: 1s ease;
+}
+
+.link-hover__grey:hover {
+  transition: 0.5s linear;
+  color: #b6bcbf;
+}
