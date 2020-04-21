@@ -1,3 +1,5 @@
+/// Главная
+
 export const CARD_CONTAINER = document.querySelector(".card-container");
 export const SEARCH = document.forms.search;
 export const INPUT = document.forms.search.elements.input;
