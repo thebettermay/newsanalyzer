@@ -6,7 +6,7 @@ export default class NewsApi {
   }
   getNews() {
     return fetch(
-      "http://newsapi.org/v2/everything?" +
+      "https://newsapi.org/v2/everything?" +
         `q=${this.request.value}&` +
         `from=${this.weekAgo}&` +
         `to=${this.now}&` +
