@@ -76,6 +76,7 @@ export default class NewsCardList {
 
   renderNews(newsArray) {
     const newsArticles = newsArray.articles;
+
     for (let i = this.startCounter; i < this.startCounter + COUNTER_PLUS; i++) {
       newsArticles[i] = this.newsCard.create(
         newsArticles[i].url,

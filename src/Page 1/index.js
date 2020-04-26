@@ -1,5 +1,6 @@
 import "./style.css";
-
+import now from "../js/utils/getDate";
+import { weekAgo } from "../js/utils/getDate";
 require("../Page 1/images/favicon.png");
 
 import { CARD_CONTAINER } from "../js/constants/constants";
@@ -19,8 +20,7 @@ import NewsCardList from "../js/components/newscardlist";
 import NewsCard from "../js/components/newscard";
 
 (function () {
-  const NEWS_API = new NewsApi(INPUT);
-  console.log(INPUT.value);
+  const NEWS_API = new NewsApi(INPUT, now, weekAgo());
   const NEWS_CARD = new NewsCard();
   const NEWS_CARD_LIST = new NewsCardList(
     NEWS,
