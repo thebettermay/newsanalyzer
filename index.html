@@ -7,7 +7,7 @@
     <title>News Analyzer</title>
     <link
       rel="stylesheet"
-      href="style.d8d64bd4b8125c932b26.css"
+      href="style.8816e7ef6cecc6f31e83.css"
     />
     <link
       rel="icon"
@@ -43,7 +43,7 @@
           <form class="search-form" name="search">
             <input
               type="text"
-              name="search-field"
+              name="input"
               class="search-field"
               placeholder="Введите запрос"
               pattern="^[a-zA-Zа-яА-ЯЁё0-9]+$"
@@ -58,24 +58,16 @@
         </div>
       </section>
 
-      <section class="preloading">
-        <i class="circle-preloader"></i>
+      <section class="preloading hidden">
+        <div class="circle-preloader"></div>
         <p class="text text__preloading">Ведется поиск...</p>
       </section>
+      <p class="preloading__error hidden">
+        Во время запроса произошла ошибка. Возможно, проблема с соединением или
+        сервер недоступен. Подождите немного и попробуйте ещё раз
+      </p>
 
-      <section class="not-found">
-        <img
-          src="./images/not-found.svg"
-          class="not-found-pic"
-          alt="not_found"
-        />
-        <h2 class="title title__preloading">Ничего не найдено</h2>
-        <h3 class="text__preloading text__preloading_not-found">
-          К сожалению по вашему запросу ничего не найдено...
-        </h3>
-      </section>
-
-      <section class="news">
+      <section class="news hidden">
         <div class="news-container">
           <div class="wrap">
             <h2 class="title title__news">Результаты поиска</h2>
@@ -84,7 +76,7 @@
             >
           </div>
           <div class="card-container">
-            <div class="news-card">
+            <!---   <div class="news-card">
               <div class="news-card__image"></div>
               <div class="news-card__info">
                 <p class="date">2 2 августа 2019</p>
@@ -120,7 +112,7 @@
                 </p>
                 <p class="resource">deflowerisation.net</p>
               </div>
-            </div>
+            </div> -->
           </div>
           <form class="more-form" name="more">
             <button type="submit" name="more-button" class="more-button">
@@ -129,6 +121,18 @@
           </form>
         </div>
       </section>
+
+      <div class="not-found hidden">
+        <img
+          src="./images/not-found.svg"
+          class="not-found-pic"
+          alt="not_found"
+        />
+        <h2 class="title title__preloading">Ничего не найдено</h2>
+        <h3 class="text__preloading text__preloading_not-found">
+          К сожалению по вашему запросу ничего не найдено...
+        </h3>
+      </div>
 
       <section class="author">
         <div class="author__container">
@@ -203,7 +207,7 @@
 
       <script
         type="module"
-        src="main.92291b2d62bd843b7e70.js"
+        src="main.445ddde6b59725390d27.js"
       ></script>
     </div>
   </body>
