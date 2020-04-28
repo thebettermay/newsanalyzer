@@ -42,6 +42,7 @@
 @import url("styles/analytics/__data/analytics__data.css");
 @import url("styles/analytics/__data/graphs/graph/__scale/graph__scale.css");
 @import url("styles/analytics/__data/graphs/graph/__scale/_low/graph__scale_low.css");
+@import url("styles/analytics/__data/graphs/graph/__line/graph__line.css");
 
 @import url("styles/wrap/wrap.css");
 

@@ -8,14 +8,7 @@ export default class GithubApi {
 
   getCommits() {
     return fetch(
-      `https://api.github.com/repos/${this.user}/${this.repo}/commits?&per_page=${this.commitsPerPage}`,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `${this.token}`,
-        },
-      }
+      `https://api.github.com/repos/${this.user}/${this.repo}/commits?&per_page=${this.commitsPerPage}`
     )
       .then((res) =>
         res.ok ? res.json() : Promise.reject(`Ошибка: ${res.status}`)

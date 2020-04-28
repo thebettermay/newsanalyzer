@@ -4,6 +4,7 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 22px;
+  width: 352px;
   color: #1a1b22;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -14,5 +15,12 @@
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .text-news {
     margin: 0;
+    width: 256px;
+  }
+}
+
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .text-news {
+    width: 192px;
   }
 }

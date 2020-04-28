@@ -2,6 +2,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  width: 65px;
+  width: 104px;
   padding: 0;
+}
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .dates {
+    width: 77px;
+  }
 }

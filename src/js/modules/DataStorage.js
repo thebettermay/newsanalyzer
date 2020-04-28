@@ -7,7 +7,6 @@ export default class DataStorage {
 
   getLastResults() {
     if (this.storageData in localStorage) {
-      console.log(localStorage);
       const newsArray = JSON.parse(localStorage.getItem(`${this.storageData}`));
       this.newsCardlist.renderNews(newsArray);
       this.newsContainer.classList.remove("hidden");

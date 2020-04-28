@@ -5,6 +5,8 @@ import {
   RESULTS_WEEK,
   RESULTS_HEADING,
   GRAPH_DATE,
+  GRAPHS,
+  MONTH,
 } from "../js/constants/constants3";
 
 import Statistics from "../js/components/statistics";
@@ -15,13 +17,9 @@ import Statistics from "../js/components/statistics";
     REQUEST,
     RESULTS_WEEK,
     RESULTS_HEADING,
-    GRAPH_DATE
+    GRAPH_DATE,
+    GRAPHS,
+    MONTH
   );
-  console.log(statistics.sortedByDateData());
-  console.log(statistics.getDates());
-  console.log(statistics.getFormatedDates());
-  statistics.setGraphDate();
-  statistics.setRequest();
-  console.log(statistics.getFormattedArray());
-  statistics.getNewsArray();
+  statistics.initializeStatistics();
 })();

@@ -2,7 +2,7 @@ export default class NewsCard {
   create(url, urlToImage, publishedAt, title, description, source) {
     const template = `
     <div class="news-card">
-
+    <a href="${url}" class="card-link" target="_blank">
     <div class="news-card__image-container">
     <img src="${urlToImage}" alt="обложка новости" class="news-card__image">
     </div>
@@ -13,6 +13,7 @@ export default class NewsCard {
         ${description}
         </p>
         <p class="resource">${source}</p>
+        </a>
       </div>`;
     return template;
   }

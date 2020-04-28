@@ -14,3 +14,25 @@ export function weekAgo() {
     date.getDate();
   return weekAgo;
 }
+
+export function generateFormatedDates(day) {
+  let date = new Date(day);
+  let year = date.getFullYear();
+  let month = [
+    "января",
+    "февраля",
+    "марта",
+    "апреля",
+    "мая",
+    "июня",
+    "июля",
+    "августа",
+    "сентября",
+    "октября",
+    "ноября",
+    "декабря",
+  ][date.getMonth()];
+  let dayOfMonth = date.getDate();
+  let formatedDate = dayOfMonth + " " + month + ", " + year;
+  return formatedDate;
+}

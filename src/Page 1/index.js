@@ -13,7 +13,7 @@ import { PRELOADING_ERROR } from "../js/constants/constants";
 import { NOT_FOUND } from "../js/constants/constants";
 import { PRELOADER } from "../js/constants/constants";
 import { MORE_BUTTON } from "../js/constants/constants";
-
+import { ERROR_IMG } from "../js/constants/constants";
 import NewsApi from "../js/modules/NewsApi";
 import DataStorage from "../js/modules/datastorage";
 import NewsCardList from "../js/components/newscardlist";
@@ -33,7 +33,8 @@ import NewsCard from "../js/components/newscard";
     NEWS_WRAP,
     PRELOADER,
     MORE_BUTTON,
-    INPUT
+    INPUT,
+    ERROR_IMG
   );
 
   const DATA_STORAGE = new DataStorage(NEWS, NEWS_CARD_LIST, STORAGE_DATA);

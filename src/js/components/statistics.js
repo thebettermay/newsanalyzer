@@ -1,10 +1,20 @@
 export default class Statistics {
-  constructor(storageData, request, resultsWeek, resultsHeading, graphDate) {
+  constructor(
+    storageData,
+    request,
+    resultsWeek,
+    resultsHeading,
+    graphDate,
+    graphs,
+    month
+  ) {
     this.storageData = storageData;
     this.request = request;
     this.resultsWeek = resultsWeek;
     this.resultsHeading = resultsHeading;
     this.graphDate = graphDate;
+    this.graphs = graphs;
+    this.month = month;
   }
 
   //Сортирует массив новостей по датам, сверху оказываются свежие
@@ -72,12 +82,10 @@ export default class Statistics {
 
   //получаем  объект с ключами в виде дат
   getFormattedArray() {
-    let formerArray = this.getFormatedDates();
     let arrayOfDates = this.getDates();
     const getInitialObject = (array) => {
       return array.reduce((acc, current) => {
-        formerArray.articles.filter((news) => news.publishedAt === current);
-        acc[current] = [formerArray.articles];
+        acc[current] = [];
         return acc;
       }, {});
     };
@@ -89,13 +97,53 @@ export default class Statistics {
   //формируем объект "дата: массив новостей"
 
   getNewsArray() {
-    let formerArray = this.getFormatedDates();
-    let dateObject = this.getDates();
-    console.log(formerArray.articles[0]);
-    for (let i = 0; i < formerArray.length; i++) {
-      formerArray.articles[i].publishedAt === dateObject[i];
+    let formerArray = this.getFormatedDates().articles;
+    let dateObject = this.getFormattedArray();
+    for (let key in dateObject) {
+      for (let i = 0; i < formerArray.length; i++) {
+        if (key === formerArray[i].publishedAt) {
+          dateObject[key] = [...dateObject[key], formerArray[i]];
+          //dateObject[key].push(formerArray[i]) - не уверен, какой вариант лучше с т.зр памяти
+        }
+      }
     }
-    return formerArray.articles;
+    return dateObject;
+  }
+
+  //кол-во упоминаний запроса в заголовках
+  mentionCount() {
+    let data = JSON.parse(localStorage.getItem(this.storageData));
+    let keyWord = localStorage.getItem("keyword");
+    let counter = 0;
+    const regexp = new RegExp(`${keyWord}`, `gi`);
+    data.articles
+      .map((item) => item.title)
+      .forEach((element) => {
+        if (element.match(regexp)) {
+          counter += 1;
+        }
+      });
+    return counter;
+  }
+
+  //отрисовка данных о количестве новостей за неделю и количестве упоминаний в заголовках
+  keywordStats() {
+    let data = JSON.parse(localStorage.getItem(this.storageData));
+    this.request.textContent = localStorage.getItem("keyword");
+    this.resultsWeek.textContent = data.totalResults;
+    this.resultsHeading.textContent = this.mentionCount();
+  }
+
+  //добавление текущего месяца в столбец "Дата" графика
+  setCurrentMonth() {
+    function getCurrentMonth() {
+      let month = new Date();
+      let options = {
+        month: "long",
+      };
+      return month.toLocaleString("ru", options);
+    }
+    this.month.textContent = getCurrentMonth();
   }
 
   setGraphDate() {
@@ -105,39 +153,71 @@ export default class Statistics {
     }
   }
 
-  setRequest() {
-    this.request.textContent = localStorage.getItem("keyword");
+  //подсчет количества упоминаний ключевого слова в заголовках и описании новостей
+  countMentionsPerDay() {
+    let keyWord = localStorage.getItem("keyword");
+    let mentionsArray = [];
+    const regexp = new RegExp(`${keyWord}`, `gi`);
+    let weekArray = this.getNewsArray();
+    for (let day in weekArray) {
+      let counter = 0;
+      weekArray[day]
+        .map((item) => item.title)
+        .forEach((element) => {
+          if (element !== null) {
+            if (element.match(regexp)) {
+              counter += 1;
+            }
+          }
+        });
+      weekArray[day]
+        .map((item) => item.description)
+        .forEach((element) => {
+          if (element !== null) {
+            if (element.match(regexp)) {
+              counter += 1;
+            }
+          }
+        });
+      mentionsArray.push(counter);
+    }
+    return mentionsArray;
   }
-}
 
-/*getWeekDay() {
-    let newsArray = this.sortedByDateData();
-    for (let i = 0; i < newsArray.articles.length; i++) {
-      function getWeekDay(date) {
-        let days = ["ВС", "ПН", "ВТ", "СР", "ЧТ", "ПТ", "СБ"];
-
-        return days[date.getDay()];
+  //вывод аналитики
+  renderGraph() {
+    let mentionsArray = this.countMentionsPerDay();
+    for (let i = 0; i < mentionsArray.length; i++) {
+      this.graphs.children[i].textContent = mentionsArray[i];
+      if (mentionsArray[i] !== 0) {
+        let widthPC = 11.3 * mentionsArray[i];
+        let widthTablet = 5.5 * mentionsArray[i];
+        let widthMobile = 1.86 * mentionsArray[i];
+        this.graphs.children[i].style.width = `${widthPC}px`;
+        if (
+          window.matchMedia(
+            "screen and (min-width: 768px) and (max-width: 1250px)"
+          ).matches
+        ) {
+          this.graphs.children[i].style.width = `${widthTablet}px`;
+        }
+        if (
+          window.matchMedia(
+            "screen and (min-width: 320px) and (max-width: 767px)"
+          ).matches
+        ) {
+          this.graphs.children[i].style.width = `${widthMobile}px`;
+        }
+      } else {
+        this.graphs.children[i].style.width = `15px`;
       }
-      let date = new Date(this.getDate());
-      let day = getWeekDay(date);
-      console.log(day);
     }
   }
-}
-sortbyDate() {
-    if (this.storageData in localStorage) {
-      const newsArray = JSON.parse(localStorage.getItem(`${this.storageData}`));
-      newsArray.articles.forEach((element) => {
-        element.publishedAt = new Date(element.publishedAt)
-          .toISOString()
-          .split("T")[0];
-      });
-      return newsArray;
-    }
-    let result = newsArray.articles.map(
-      (publishedAt) => (publishedAt = publishedAt)
-    );
-    console.log(result);
+
+  initializeStatistics() {
+    this.keywordStats();
+    this.setGraphDate();
+    this.renderGraph();
+    this.setCurrentMonth();
   }
 }
-*/

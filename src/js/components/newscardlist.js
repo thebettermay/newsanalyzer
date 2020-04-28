@@ -1,9 +1,10 @@
 import { COUNTER_PLUS } from "../constants/constants";
+import { generateFormatedDates } from "../utils/getDate";
 
 export default class NewsCardList {
   constructor(
-    resultsSection,
-    cardsContainer,
+    results,
+    cards,
     storageData,
     newsCard,
     newsApi,
@@ -12,10 +13,11 @@ export default class NewsCardList {
     newsBlock,
     loaderBlock,
     showMoreButton,
-    input
+    input,
+    errorImg
   ) {
-    this.resultsSection = resultsSection;
-    this.cardsContainer = cardsContainer;
+    this.results = results;
+    this.cards = cards;
     this.storageData = storageData;
     this.newsCard = newsCard;
     this.newsApi = newsApi;
@@ -26,47 +28,27 @@ export default class NewsCardList {
     this.startCounter = 0;
     this.showMoreButton = showMoreButton;
     this.input = input;
+    this.errorImg = errorImg;
   }
 
-  addCard(cardTemplate) {
-    this.cardsContainer.insertAdjacentHTML("beforeend", cardTemplate);
+  //вывод карточки в разметку
+  _addCard(cardTemplate) {
+    this.cards.insertAdjacentHTML("beforeend", cardTemplate);
+  }
+  //очистка контейнера с карточками новостей
+  _clearLastNews() {
+    this.cards.innerHTML = "";
   }
 
-  clearLastNews() {
-    this.cardsContainer.innerHTML = "";
-  }
-
-  preloaderOn() {
+  //прелоадер
+  _preloaderOn() {
     this.newsBlock.classList.add("hidden");
     this.loaderBlock.classList.remove("hidden");
   }
 
-  noResultsOff() {
-    this.noResultsBlock.classList.add("hidden");
-    this.errorBlock.classList.add("hidden");
-    this.resultsSection.classList.remove("hidden");
-    this.newsBlock.classList.remove("hidden");
-    this.loaderBlock.classList.add("hidden");
-  }
-
-  noResultsOn() {
-    this.resultsSection.classList.remove("hidden");
-    this.noResultsBlock.classList.remove("hidden");
-    this.errorBlock.classList.add("hidden");
-    this.newsBlock.classList.add("hidden");
-    this.loaderBlock.classList.add("hidden");
-  }
-
-  errorOn() {
-    this.resultsSection.classList.remove("hidden");
-    this.errorBlock.classList.remove("hidden");
-    this.newsBlock.classList.add("hidden");
-    this.loaderBlock.classList.add("hidden");
-    this.noResultsBlock.classList.add("hidden");
-  }
-
-  hideAndShowMoreNewsButton(newsArray) {
-    let countedCards = this.cardsContainer.childElementCount;
+  //показать/скрыть кнопку "Показать еще"
+  _moreBtnSwitch(newsArray) {
+    let countedCards = this.cards.childElementCount;
     if (countedCards < newsArray.articles.length) {
       this.showMoreButton.classList.remove("hidden");
     } else {
@@ -74,49 +56,90 @@ export default class NewsCardList {
     }
   }
 
+  //ошибка при отс-ии картинки новости
+  _checkArticleImage(articleImage) {
+    if (articleImage === null) {
+      articleImage = `${this.errorImg}`;
+    }
+
+    return articleImage;
+  }
+
+  //отрисовка карточек
   renderNews(newsArray) {
     const newsArticles = newsArray.articles;
 
     for (let i = this.startCounter; i < this.startCounter + COUNTER_PLUS; i++) {
+      const articleImg = this._checkArticleImage(newsArticles[i].urlToImage);
       newsArticles[i] = this.newsCard.create(
         newsArticles[i].url,
-        newsArticles[i].urlToImage,
-        newsArticles[i].publishedAt,
+        articleImg,
+        generateFormatedDates(newsArticles[i].publishedAt),
         newsArticles[i].title,
         newsArticles[i].description,
         newsArticles[i].source.name
       );
-      this.addCard(newsArticles[i]);
+      this._addCard(newsArticles[i]);
     }
+    this._moreBtnSwitch(newsArray);
   }
 
+  //показать еще
   showMoreNews(newsArray) {
     this.startCounter += COUNTER_PLUS;
     this.renderNews(newsArray);
-    this.hideAndShowMoreNewsButton(newsArray);
   }
 
+  //получение данных с News Api
   getNews() {
-    this.preloaderOn();
+    this._preloaderOn();
+    this.startCounter = 0;
     this.newsApi
       .getNews()
       .then((res) => {
         if (+res.totalResults !== 0) {
-          this.clearLastNews();
+          this._clearLastNews();
           localStorage.clear();
-          this.noResultsOff();
+          this._noResultsOff();
           localStorage.setItem("keyword", `${this.input.value}`);
           localStorage.setItem(`${this.storageData}`, JSON.stringify(res));
           this.renderNews(
             JSON.parse(localStorage.getItem(`${this.storageData}`))
           );
         } else {
-          this.noResultsOn();
+          this._noResultsOn();
         }
       })
       .catch((error) => {
-        this.errorOn();
+        this._errorOn();
         console.log(`Ошибка: ${error.message}`);
       });
+  }
+
+  //скрыть блок "отстутствие рез-в"
+  _noResultsOff() {
+    this.noResultsBlock.classList.add("hidden");
+    this.errorBlock.classList.add("hidden");
+    this.results.classList.remove("hidden");
+    this.newsBlock.classList.remove("hidden");
+    this.loaderBlock.classList.add("hidden");
+  }
+
+  //показать блок "отсутствие рез-в"
+  _noResultsOn() {
+    this.results.classList.remove("hidden");
+    this.noResultsBlock.classList.remove("hidden");
+    this.errorBlock.classList.add("hidden");
+    this.newsBlock.classList.add("hidden");
+    this.loaderBlock.classList.add("hidden");
+  }
+
+  //ошибка получения данных с News Api
+  _errorOn() {
+    this.results.classList.remove("hidden");
+    this.errorBlock.classList.remove("hidden");
+    this.newsBlock.classList.add("hidden");
+    this.loaderBlock.classList.add("hidden");
+    this.noResultsBlock.classList.add("hidden");
   }
 }
