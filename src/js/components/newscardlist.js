@@ -80,8 +80,8 @@ export default class NewsCardList {
         newsArticles[i].source.name
       );
       this._addCard(newsArticles[i]);
+      this._moreBtnSwitch(newsArray);
     }
-    this._moreBtnSwitch(newsArray);
   }
 
   //показать еще
