@@ -1,13 +1,19 @@
 .number {
+  margin: 0 263px 0 0;
   font-family: Roboto;
   font-style: normal;
-  font-weight: bold;
+  font-weight: 400;
   font-size: 12px;
   line-height: 16px;
-  display: flex;
-  align-items: center;
   letter-spacing: 0.4px;
-  text-transform: uppercase;
-  color: #ffffff;
-  margin: 3px 0 0 10px;
+  color: #b6bcbf;
+}
+
+.number:first-child {
+  padding-left: 104px;
+}
+@media screen and (max-width: 1250px) and (min-width: 768px) {
+  .number {
+    margin-right: 128px;
+  }
 }

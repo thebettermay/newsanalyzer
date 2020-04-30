@@ -22,7 +22,7 @@
 @import url("styles/text/text.css");
 @import url("styles/text/title/title.css");
 @import url("styles/text/-center-align/text_center-align.css");
-@import url("styles/text/_result/text_result.css");
+@import url("styles/text/__result/text__result.css");
 @import url("styles/text/title/__analytics/title__analytics.css");
 @import url("styles/text/title/__info/title__info.css");
 
@@ -42,6 +42,7 @@
 @import url("styles/analytics/__data/analytics__data.css");
 @import url("styles/analytics/__data/graphs/graph/__scale/graph__scale.css");
 @import url("styles/analytics/__data/graphs/graph/__scale/_low/graph__scale_low.css");
+@import url("styles/analytics/__data/graphs/graph/__line/graph__line.css");
 
 @import url("styles/wrap/wrap.css");
 
