@@ -17,8 +17,7 @@
   .author-photo {
     width: 272px;
     height: 272px;
-    margin: 0 0 24px 0;
-    padding-top: 20px;
+    margin: 24px 0;
     padding-bottom: 0;
   }
 }

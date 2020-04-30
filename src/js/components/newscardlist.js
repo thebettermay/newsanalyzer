@@ -37,7 +37,7 @@ export default class NewsCardList {
   }
   //очистка контейнера с карточками новостей
   _clearLastNews() {
-    while (this.cards.firstChild) this.cards.removeChild(this.cards.firstChild);
+    this.cards.innerHTML = "";
   }
 
   //прелоадер
@@ -68,7 +68,7 @@ export default class NewsCardList {
   //отрисовка карточек
   renderNews(newsArray) {
     const newsArticles = newsArray.articles;
-
+    console.log(newsArticles);
     for (let i = this.startCounter; i < this.startCounter + COUNTER_PLUS; i++) {
       const articleImg = this._checkArticleImage(newsArticles[i].urlToImage);
       newsArticles[i] = this.newsCard.create(
@@ -80,8 +80,8 @@ export default class NewsCardList {
         newsArticles[i].source.name
       );
       this._addCard(newsArticles[i]);
-      this._moreBtnSwitch(newsArray);
     }
+    this._moreBtnSwitch(newsArray);
   }
 
   //показать еще

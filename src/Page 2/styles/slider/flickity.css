@@ -144,3 +144,9 @@ https://flickity.metafizzy.co
 .flickity-page-dots .dot.is-selected {
   opacity: 1;
 }
+
+@media screen and (max-width: 767px) and (min-width: 320px) {
+  .flickity-page-dots {
+    bottom: -40px;
+  }
+}
