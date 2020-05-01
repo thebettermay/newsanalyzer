@@ -6,35 +6,18 @@
   line-height: 24px;
   color: #b6bcbf;
   text-decoration: none;
-  text-align: center;
-  max-height: 24px;
-  padding: 15% 0;
-  justify-content: center;
-  align-items: center;
-  min-width: 60px;
   margin-right: 20px;
 }
 
-.header-link:hover {
-  transition: 1s linear;
-  color: white;
-}
 .header-link:last-child {
-  width: 85px;
-  margin: 0 0 0 26px;
+  margin: 0;
+  width: 90px;
 }
-
 @media screen and (max-width: 767px) and (min-width: 320px) {
   .header-link {
     width: 61px;
-    margin-right: 12px;
+    margin-right: 11px;
     font-size: 16px;
     line-height: 24px;
-  }
-}
-
-@media screen and (max-width: 767px) and (min-width: 320px) {
-  .header-link:last-child {
-    margin: 0;
   }
 }
