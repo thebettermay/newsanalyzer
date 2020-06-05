@@ -37,7 +37,7 @@ export default class NewsCardList {
   }
   //очистка контейнера с карточками новостей
   _clearLastNews() {
-    this.cards.innerHTML = "";
+    while (this.cards.firstChild) this.cards.removeChild(this.cards.firstChild);
   }
 
   //прелоадер
